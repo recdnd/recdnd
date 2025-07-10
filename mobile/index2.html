@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rec Dungeons Mobile</title>
+  <style>
+    :root {
+      --bg-light: white;
+      --bg-dark: black;
+      --fg-light: rgba(0, 0, 0, 0.2);
+      --fg-dark: rgba(255, 0, 0, 0.2);
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: 'Courier New', monospace;
+      background-color: var(--bg-light);
+      color: black;
+      transition: background 0.5s, color 0.5s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    body.dark {
+      background-color: var(--bg-dark);
+      color: red;
+    }
+
+    .logo-container {
+      position: relative;
+    }
+
+    .logo {
+      width: 120px;
+      height: auto;
+      cursor: pointer;
+      transition: filter 0.4s, transform 0.3s;
+      z-index: 2;
+      position: relative;
+    }
+
+    .container {
+      text-align: center;
+      z-index: 3;
+      position: relative;
+    }
+
+    .module-ring {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 240px;
+      height: 240px;
+      transform: translate(-50%, -50%);
+      animation: rotate 40s linear infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .module-ring span {
+      position: absolute;
+      font-size: 1.5rem;
+      color: inherit;
+    }
+
+    .module-ring span:nth-child(1) { top: 0%; left: 50%; transform: translateX(-50%); }
+    .module-ring span:nth-child(2) { top: 18%; left: 82%; transform: translate(-50%, -50%); }
+    .module-ring span:nth-child(3) { top: 50%; left: 100%; transform: translate(-50%, -50%); }
+    .module-ring span:nth-child(4) { top: 82%; left: 82%; transform: translate(-50%, -50%); }
+    .module-ring span:nth-child(5) { top: 100%; left: 50%; transform: translate(-50%, -100%); }
+    .module-ring span:nth-child(6) { top: 82%; left: 18%; transform: translate(-50%, -50%); }
+    .module-ring span:nth-child(7) { top: 50%; left: 0%; transform: translate(-50%, -50%); }
+    .module-ring span:nth-child(8) { top: 18%; left: 18%; transform: translate(-50%, -50%); }
+
+    @keyframes rotate {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    .side-buttons {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .left-buttons { left: 1rem; }
+    .right-buttons { right: 1rem; }
+
+    .circle-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: none;
+      font-size: 1.2rem;
+      color: white;
+      background-color: var(--fg-light);
+      backdrop-filter: blur(4px);
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    body.dark .circle-btn {
+      background-color: var(--fg-dark);
+    }
+
+    .circle-btn:active {
+      transform: scale(0.95);
+    }
+
+    #particleCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 2;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="side-buttons left-buttons">
+    <button class="circle-btn" onclick="confirmJump('../index.html', '⚠️Are you on a computer?')">🖥</button>
+    <button class="circle-btn" onclick="confirmJump('https://spiral.ooo')">⛏︎</button>
+    <button class="circle-btn" onclick="confirmJump('https://sus.church')">☆</button>
+  </div>
+
+  <div class="logo-container" onclick="toggleMode()">
+    <img src="blackrec.png" id="logo" class="logo" alt="Rec Logo">
+    <div class="module-ring">
+      <span>⭑</span><span>✞</span><span>𖤠</span><span>⛏︎</span><span>𖤂</span><span>⚕︎</span><span>✑</span><span>✐</span><span>⭒</span>
+    </div>
+  </div>
+
+  <div class="side-buttons right-buttons">
+    <button class="circle-btn" onclick="confirmJump('https://x.com/recdnd')">𝕏𝓡</button>
+    <button class="circle-btn" onclick="confirmJump('https://x.com/recdndx')">𝕏秘</button>
+    <button class="circle-btn" onclick="confirmJump('https://spirallab.org')">🧪</button>
+    <button class="circle-btn" onclick="confirmJump('mailto:recdnd@proton.me')">✉️</button>
+  </div>
+
+  <canvas id="particleCanvas"></canvas>
+
+  <script>
+    let particleColor = "#39ff00";
+    let lastTouch = { x: null, y: null };
+
+    function toggleMode() {
+      const body = document.body;
+      const logo = document.getElementById('logo');
+      body.classList.toggle('dark');
+      const isDark = body.classList.contains('dark');
+      logo.src = isDark ? '447redmat.png' : 'blackrec.png';
+      particleColor = isDark ? "rgba(255, 0, 0, 1)" : "#39ff00";
+      if (navigator.vibrate) navigator.vibrate(80);
+    }
+
+    function confirmJump(url, message = "Jump?") {
+      if (confirm(message)) {
+        if (navigator.vibrate) navigator.vibrate(50);
+        window.location.href = url;
+      }
+    }
+
+    const canvas = document.getElementById("particleCanvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particles = [];
+
+    function Particle(x, y) {
+      this.x = x;
+      this.y = y;
+      this.size = 2;
+      this.speedX = Math.random() * 2 - 1;
+      this.speedY = Math.random() * 2 - 1;
+    }
+
+    Particle.prototype.update = function () {
+      this.x += this.speedX;
+      this.y += this.speedY;
+      this.size *= 0.98;
+      ctx.globalAlpha = 1.0;
+      ctx.strokeStyle = particleColor;
+      ctx.fillStyle = particleColor;
+      ctx.shadowColor = particleColor;
+      ctx.lineWidth = 0.5;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.stroke();
+    };
+
+    function createParticles(x, y) {
+      for (let i = 0; i < 5; i++) {
+        particles.push(new Particle(x, y));
+      }
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      if (lastTouch.x !== null && lastTouch.y !== null) {
+        createParticles(lastTouch.x, lastTouch.y);
+      }
+      for (let i = particles.length - 1; i >= 0; i--) {
+        particles[i].update();
+        if (particles[i].size <= 0.2) particles.splice(i, 1);
+      }
+      requestAnimationFrame(animateParticles);
+    }
+
+    document.addEventListener("touchstart", (e) => {
+      const touch = e.touches[0];
+      lastTouch = { x: touch.clientX, y: touch.clientY };
+    });
+
+    document.addEventListener("touchmove", (e) => {
+      const touch = e.touches[0];
+      lastTouch = { x: touch.clientX, y: touch.clientY };
+    });
+
+    animateParticles();
+  </script>
+</body>
+</html>

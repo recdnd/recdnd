@@ -208,11 +208,9 @@ function Particle(x, y) {
   this.size = 1;
   this.speedX = Math.random() * 2 - 1;
   this.speedY = Math.random() * 2 - 1;
-  this.gravity = 0.05;
 }
 
 Particle.prototype.update = function () {
-	this.speedY += this.gravity;
   this.x += this.speedX;
   this.y += this.speedY;
   this.size *= 0.98;
@@ -228,7 +226,7 @@ Particle.prototype.update = function () {
 };
 
 function createParticles(x, y) {
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 5; i++) {
     particles.push(new Particle(x, y));
   }
 }

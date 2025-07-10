@@ -151,7 +151,7 @@
   </div>
 
   <div class="side-buttons right-buttons">
-<button class="circle-btn" onclick="confirmJump('https://x.com/recdnd', '[rec] Lead_Writer𝕏Main. Confirm Jump?')">𝕏𝓡</button>
+<button class="circle-btn" onclick="confirmJump('https://x.com/recdndx', '[rec] Lead_Writer𝕏Main. Confirm Jump?')">𝕏𝓡</button>
 <button class="circle-btn" onclick="confirmJump('https://x.com/recdndx', '🔞[軍田勇]二次創作𝕏アカウント18未満閲覧非推奨/Doujin 𝕏 Account(Not Recommended for Under 18)Confirm Jump?')">𝕏秘</button>
 <button class="circle-btn" onclick="confirmJump('https://spirallab.org')">🧪</button>
 
@@ -186,33 +186,29 @@ const particles = [];
 
 let lastTouch = { x: null, y: null };
 
-  function toggleMode() {
-    const body = document.body;
-    const logo = document.getElementById('logo');
-    body.classList.toggle('dark');
-    const isDark = body.classList.contains('dark');
-    logo.src = isDark ? '447redmat.png' : 'blackrec.png';
+function toggleMode() {
+  document.body.classList.toggle('dark');
+  const logo = document.getElementById('logo');
+  const isDark = document.body.classList.contains('dark');
+  logo.src = isDark ? '447redmat.png' : 'blackrec.png';
 
-    // 更新粒子顏色
-    particleColor = isDark ? "rgba(255, 0, 0, 1)" : "#39ff00";
+  // 加這行：根據模式更新粒子顏色
+  particleColor = getCurrentParticleColor();
 
-    // 移至觸發事件中執行
-    if (navigator.vibrate) {
-      navigator.vibrate(80);
-    }
+  if ("vibrate" in navigator) {
+    navigator.vibrate(80);
   }
+}
 
 function Particle(x, y) {
   this.x = x;
   this.y = y;
-  this.size = 1;
+  this.size = 2;
   this.speedX = Math.random() * 2 - 1;
   this.speedY = Math.random() * 2 - 1;
-  this.gravity = 0.05;
 }
 
 Particle.prototype.update = function () {
-	this.speedY += this.gravity;
   this.x += this.speedX;
   this.y += this.speedY;
   this.size *= 0.98;
@@ -228,7 +224,7 @@ Particle.prototype.update = function () {
 };
 
 function createParticles(x, y) {
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 5; i++) {
     particles.push(new Particle(x, y));
   }
 }
