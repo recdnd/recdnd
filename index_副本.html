@@ -4,13 +4,6 @@
   <meta charset="UTF-8">
   <title>Rec Dungeons</title>
   <link rel="icon" type="image/png" href="redrec32.png">
-<script>
-  (function() {
-    if (window.innerWidth <= 768) {
-      window.location.href = "mobile/index.html";
-    }
-  })();
-</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     :root {
@@ -349,11 +342,8 @@ button.link-button:hover {
 	<div id="introCover"></div>
 	<canvas id="particleCanvas"></canvas>
   <div class="top-buttons">
-	<div class="top-buttons">
-	  <button onclick="toggleTheme()">💡</button>
-	  <button onclick="bookmarkSite()">📌</button>
-	  <button onclick="goToMobile()">📱</button>
-	</div>
+    <button onclick="toggleTheme()">💡</button>
+    <button onclick="bookmarkSite()">📌</button>
   </div>
 		<div class="container">
 	  <div style="position: relative; display: inline-block;">
@@ -483,7 +473,10 @@ function generateCode() {
   <a href="javascript:void(0)" onclick="copyEmailAndRedirect('recdungeons@gmail.com')"><code>recdungeons@gmail.com</code></a>
 </div>
 				</div>
-
+				
+				
+				
+				
 				<script>
 				function copyEmailAndRedirect(email) {
   // 複製到剪貼板
@@ -557,12 +550,5 @@ function animateParticles() {
 document.addEventListener("mousemove", createParticles);
 setInterval(animateParticles, 20); // 每20ms更新一次粒子
 </script>
-
-<script>
-  function goToMobile() {
-    window.location.href = "mobile/index.html";
-  }
-</script>
-
 </body>
 </html>
