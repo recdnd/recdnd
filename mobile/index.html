@@ -208,14 +208,14 @@ function Particle(x, y) {
   this.size = 1;
   this.speedX = Math.random() * 2 - 1;
   this.speedY = Math.random() * 2 - 1;
-  this.gravity = 0.05;
+  this.gravity = 0.04;
 }
 
 Particle.prototype.update = function () {
 	this.speedY += this.gravity;
   this.x += this.speedX;
   this.y += this.speedY;
-  this.size *= 0.98;
+  this.size *= 1;
   ctx.globalAlpha = 1.0;
   ctx.strokeStyle = particleColor;
   ctx.fillStyle = particleColor;
@@ -235,6 +235,7 @@ function createParticles(x, y) {
 
 function animateParticles() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+
 
 // 若有記錄觸控點，持續燃燒
   if (lastTouch.x !== null && lastTouch.y !== null) {
