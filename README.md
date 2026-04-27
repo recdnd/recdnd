@@ -1,7 +1,9 @@
-https://ruivia.dev  
-https://rec.ooo
+𓍲 https://ruivia.dev -> tree-based workspace tool, open access, feedback welcome.
+-
+𝓡 https://rec.ooo
+𖡎 https://entaticspiral.com
+⛏︎ https://spiral.ooo (under construction. playground.)
 
-𖡎 𓇗𓇕𓇚 𓆸𓆼 𖧧༗ 𖣂
 
 ```diff
 - ENTATIC SPIRAL // node
