@@ -1,4 +1,4 @@
-𓍲 https://ruivia.dev -> tree-based workspace tool, open access, feedback welcome.
+➯ 𓍲 https://ruvia.dev -> tree-based workspace tool, open access, feedback welcome.
 -
 𝓡 https://rec.ooo
 𖡎 https://entaticspiral.com
