@@ -1,8 +1,6 @@
 ➯ 𓍲 https://ruvia.dev -> node-based workspace, open access, feedback welcome.
 -
-𝓡 https://rec.ooo
-𖡎 https://entaticspiral.com
-⛏︎ https://spiral.ooo (under construction. playground.)
+🧱 https://furnace.rec.ooo -> A workspace that turns messy text into clean, usable structure in one pass.
 
 
 ```diff
