@@ -1,6 +1,6 @@
-➯ 🧱 https://furnace.rec.ooo -> A workspace that turns messy text into clean, usable structure in one pass.
+➯ 🧱 https://furnace.rec.ooo -> Turns messy text into clean, usable structure in one pass.
 -
-➯ 𓍲 https://ruvia.dev -> node-based Tree Diagram Maker, open access, feedback welcome.
+➯ 𓍲 https://ruvia.dev -> Knot-based Tree Diagram Maker, open access, feedback welcome.
 
 
 ```diff
