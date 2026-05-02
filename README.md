@@ -1,4 +1,4 @@
-➯ 🧱 https://furnace.rec.ooo -> Turns messy text into clean, usable structure in one pass.
+➯ 🧱 https://kiln.ooo -> Turns messy text into clean, usable structure in one pass.
 -
 ➯ 𓍲 https://ruvia.dev -> Knot-based Tree Diagram Maker, open access, feedback welcome.
 
