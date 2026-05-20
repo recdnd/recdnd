@@ -1,7 +1,7 @@
-➯ 🧱 https://kiln.ooo -> Turns messy text into clean, usable structure in one pass.
+➯ 🧱 https://kiln.ooo -> deterministic text clean-up tool
 -
-➯ 𓍲 https://ruvia.dev -> Knot-based Tree Diagram Maker, open access, feedback welcome.
-
+➯ 𓍲 https://ruvia.dev -> knot-based Tree Diagram Maker
+open access, feedback welcome
 
 ```diff
 - ENTATIC SPIRAL // node
