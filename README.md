@@ -1,4 +1,4 @@
-➯ 🧱 https://kiln.ooo -> deterministic text clean-up tool(boundary tests/feedback welcome)
+➯ 🧱 https://kiln.ooo -> deterministic text clean-up tool (boundary tests welcome)
 -
 ➯ 𓍲 https://ruvia.dev -> knot-based Tree Diagram Maker
 ```diff
