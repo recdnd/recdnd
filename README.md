@@ -1,6 +1,6 @@
 ➯ 🧱 https://kiln.ooo -> deterministic text clean-up tool (boundary tests welcome)
 -
-➯ 𓍲 https://ruvia.dev -> knot-based Tree Diagram Maker
+➯ 𓍲 https://ruvia.dev -> open access knot-based Tree Diagram Maker (feedback welcome)
 ```diff
 - ENTATIC SPIRAL // node
 - ────────────────────────
