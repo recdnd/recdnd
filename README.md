@@ -1,8 +1,8 @@
 # [🏠](https://rec.ooo)
 
-➯ 🎛️ https://kiln.ooo -> deterministic text clean-up tool (boundary tests welcome)
+➯ [🎛️](https://kiln.ooo) -> https://kiln.ooo deterministic text clean-up tool (boundary tests welcome)
 
-➯ 🪢 https://ruvia.dev -> open access knot-based Tree Diagram Maker (feedback welcome)
+➯ [🪢](https://ruvia.dev) -> https://ruvia.dev open access knot-based Tree Diagram Maker (feedback welcome)
 
 ```diff
 - ENTATIC SPIRAL // node
