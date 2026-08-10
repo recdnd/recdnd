@@ -1,4 +1,4 @@
-# _╱╲╱╲____╱╲___[🏠](https://rec.ooo)___╱╲╱╲_
+# ___╱╲____[🏠](https://rec.ooo)____╱╲___
 
 ➯ [🎛️](https://kiln.ooo) -> https://kiln.ooo deterministic text clean-up tool (boundary tests welcome)
 
