@@ -1,5 +1,7 @@
 # ___╱╲____[🏠](https://rec.ooo)____╱╲___
 
+➯ [🏰](https://rec.ooo/dungeons) -> https://rec.ooo/dungeons browser RPG on a self-built engine + 41 creation tools (playtests welcome)
+
 ➯ [🎛️](https://kiln.ooo) -> https://kiln.ooo deterministic text clean-up tool (boundary tests welcome)
 
 ➯ [🪢](https://ruvia.dev) -> https://ruvia.dev open access knot-based Tree Diagram Maker (feedback welcome)
