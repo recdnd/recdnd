@@ -1,6 +1,6 @@
 # ___╱╲____[🏠](https://rec.ooo)____╱╲___
 
-➯ [🏰](https://rec.ooo/dungeons) -> https://rec.ooo/dungeons browser RPG on a self-built engine + 41 creation tools (playtests welcome)
+➯ [🏰](https://rec.ooo/dungeons) -> https://rec.ooo/dungeons browser RPG (playtests welcome)
 
 <img src="img/sus-home.png" width="240" alt="sus dungeons - sus near home">
 
